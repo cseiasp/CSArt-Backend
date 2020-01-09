@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyString
+  exhibited_at: MyString
+  string: MyString
+  price: MyString
+  award: MyString
+  availability_status: MyString
+  auction_status: false
+
+two:
+  name: MyString
+  description: MyString
+  exhibited_at: MyString
+  string: MyString
+  price: MyString
+  award: MyString
+  availability_status: MyString
+  auction_status: false
