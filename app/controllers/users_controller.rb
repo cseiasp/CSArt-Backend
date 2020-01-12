@@ -9,7 +9,7 @@ class UsersController < ApplicationController
         user = User.find(params[:id])
 
         if user
-            render json: {user: user, bids: user.sales}
+            render json: {user: user, bids: user.all_bids}
         else
             render json: { errors: user.errors.full_messages}, status: :not_acceptable
         end
@@ -24,7 +24,7 @@ class UsersController < ApplicationController
     private
  
     def user_params
-      params.require(:user).permit(:email, :newsletter)
+      params.require(:user).permit(:email)
     end
 
 end

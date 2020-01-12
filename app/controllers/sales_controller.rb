@@ -10,17 +10,20 @@ class SalesController < ApplicationController
 
     def show
       if params[:id]
-      me  = User.find(params[:id])
-      my_sales = Sale.select{|sale| user_id == me}
-      render json: my_sales
+        my_sales = Sale.all.select{|sale| user_id == params[:id]}
+        render json: my_sales
       else
-        render json: { errors: user.errors.full_messages}, status: :not_acceptable
+        render json: { errors: my_sales.errors.full_messages}, status: :not_acceptable
       end
     end
 
     def create
         new_sale = Sale.create(sale_params)
-        render json: new_sale
+        if new_sale.valid?
+          render json: new_sale
+        else
+          render json: { errors: new_sale.errors.full_messages}, status: :not_acceptable
+        end
     end
 
     def charge

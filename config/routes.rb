@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :auctions
   resources :sales
   resources :users
   resources :paintings
