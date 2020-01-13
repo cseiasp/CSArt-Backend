@@ -8,4 +8,8 @@ class Sale < ApplicationRecord
         sorted_sales.map{|sale|  "£" + sale.bid_price.to_s + ", " + sale.created_at.strftime("%B %e %Y at %I:%M %p")}
     end
 
+    def saleInfo
+        return "£" + self.bid_price.to_s + ", " + self.created_at.strftime("%B %e %Y at %I:%M %p")
+    end
+
 end

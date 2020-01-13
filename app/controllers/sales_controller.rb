@@ -20,7 +20,7 @@ class SalesController < ApplicationController
     def create
         new_sale = Sale.create(sale_params)
         if new_sale.valid?
-          render json: new_sale
+          render json: {new_bid: new_sale.saleInfo}
         else
           render json: { errors: new_sale.errors.full_messages}, status: :not_acceptable
         end

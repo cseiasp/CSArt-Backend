@@ -4,6 +4,7 @@ class CreateAuctions < ActiveRecord::Migration[6.0]
       t.integer :painting_id
       t.string :start
       t.string :end
+      t.string :status
 
       t.timestamps
     end

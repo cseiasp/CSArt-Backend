@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2020_01_12_143643) do
     t.integer "painting_id"
     t.string "start"
     t.string "end"
+    t.string "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

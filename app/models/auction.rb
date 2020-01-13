@@ -1,8 +1,5 @@
 class Auction < ApplicationRecord
-
-    def index
-        auctions = Auction.all 
-        render json: auctions
-    end
+belongs_to :painting
+ 
 
 end
