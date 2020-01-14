@@ -5,11 +5,11 @@ class Sale < ApplicationRecord
     def self.all_sales
         all_sales = Sale.all.select{|sale| sale.bid_price != nil}
         sorted_sales = all_sales.sort_by{|sale| sale.bid_price}.reverse
-        sorted_sales.map{|sale|  "£" + sale.bid_price.to_s + ", " + sale.created_at.strftime("%B %e %Y at %I:%M %p")}
+        sorted_sales.map{|sale|  {display_text: "£" + sale.bid_price.to_s + ", " + sale.created_at.strftime("%B %e %Y at %I:%M %p"), sale: sale}}
     end
 
     def saleInfo
-        return "£" + self.bid_price.to_s + ", " + self.created_at.strftime("%B %e %Y at %I:%M %p")
+        return {display_text: "£" + self.bid_price.to_s + ", " + self.created_at.strftime("%B %e %Y at %I:%M %p"), sale: self}
     end
 
 end

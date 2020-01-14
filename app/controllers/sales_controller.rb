@@ -5,6 +5,7 @@ class SalesController < ApplicationController
 
     def index
       sales = Sale.all_sales
+      
       render json: sales
     end
 
