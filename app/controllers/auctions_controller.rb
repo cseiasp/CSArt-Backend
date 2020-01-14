@@ -14,6 +14,12 @@ class AuctionsController < ApplicationController
         end
     end
 
+    def update
+      auction = Auction.find(params[:id])
+      auction.update(status: auction_params[:status])
+      render json: auction
+    end
+
     private
  
     def auction_params

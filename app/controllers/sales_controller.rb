@@ -5,18 +5,10 @@ class SalesController < ApplicationController
 
     def index
       sales = Sale.all_sales
-      
+
       render json: sales
     end
 
-    def show
-      if params[:id]
-        my_sales = Sale.all.select{|sale| user_id == params[:id]}
-        render json: my_sales
-      else
-        render json: { errors: my_sales.errors.full_messages}, status: :not_acceptable
-      end
-    end
 
     def create
         new_sale = Sale.create(sale_params)
@@ -25,6 +17,13 @@ class SalesController < ApplicationController
         else
           render json: { errors: new_sale.errors.full_messages}, status: :not_acceptable
         end
+    end
+
+    def update
+      Sale.all.each{|sale| sale.update(status: "unsuccesful")}
+      sale = Sale.find(params[:id])
+      sale.update(status: sale_params[:status])
+      render json: {win: sale.saleInfo}
     end
 
     def charge
@@ -39,6 +38,8 @@ class SalesController < ApplicationController
         }
       )
     end
+
+   
 
     private
  
