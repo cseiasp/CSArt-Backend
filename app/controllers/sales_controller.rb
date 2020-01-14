@@ -20,10 +20,16 @@ class SalesController < ApplicationController
     end
 
     def update
-      Sale.all.each{|sale| sale.update(status: "unsuccesful")}
+      Sale.all.each{|sale| sale.update(status: "unsuccessful")}
       sale = Sale.find(params[:id])
       sale.update(status: sale_params[:status])
       render json: {win: sale.saleInfo}
+    end
+
+    def winnings
+      winnings = Sale.all.select{|sale| sale.status == "successful"}
+      winnings_info = winnings.map{|sale| sale.saleInfo}
+      render json: winnings_info
     end
 
     def charge
