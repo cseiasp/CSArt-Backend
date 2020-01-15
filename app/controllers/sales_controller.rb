@@ -38,8 +38,8 @@ class SalesController < ApplicationController
         {
           amount: 100,
           currency: 'gbp',
-          description: "Charge for" ,
-          receipt_email: "jenny.rosen@example.com",
+          description: "Charge for auction" ,
+          receipt_email: params[:email],
           source: token
         }
       )
