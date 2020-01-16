@@ -8,10 +8,10 @@
 Painting.delete_all
 
 paintings = [
-    {name:"Nino" , medium:"Charcoal drawing", url:"NinoWall.jpg", exhibited_at: "Royal Portrait Society Annual Exhibition 2014", price: "" , availability_status: "sold" },
+    {name:"Bunmi" , medium:"Watercolour", url:"BunmiWatercolour.jpg", exhibited_at: "Royal Portrait Society Annual Exhibition 2017", price: "" , availability_status: "available"},
     # {name:"Nino" , medium:"Charcoal drawing", url:"Nino.jpg", exhibited_at: "Royal Portrait Society Annual Exhibition 2014", price: "" , availability_status: "sold" },
-    {name:"Mausi", medium:"Charcoal drawing", url:"Mausi.jpg", exhibited_at: "", price: "" , availability_status:"sold" },
     {name:"Tito", medium:"Charcoal drawing", url:"Tito.jpg", exhibited_at: "", price: "" , availability_status:"sold" },
+    {name:"Mausi", medium:"Charcoal drawing", url:"Mausi.jpg", exhibited_at: "", price: "" , availability_status:"sold" },
     {name:"Franco", medium:"Charcoal drawing", url:"Franco.jpg", exhibited_at: "", price: "" , availability_status:"available" },
     {name:"Glen", medium:"Charcoal drawing", url:"Glen.jpg", exhibited_at: "", price: "" , availability_status:"available" },
     {name:"Girl", medium:"Charcoal drawing", url:"Girl.jpg", exhibited_at: "", price: "" , availability_status:"sold" },
@@ -20,16 +20,17 @@ paintings = [
     # {name:"Arthur", medium:"Charcoal drawing", url:"Arthur.jpg", exhibited_at: "", price: "" , availability_status:"sold" },
     # {name:"Papi", medium:"Charcoal drawing", url:"Pap1.jpg", exhibited_at: "", price: "" , availability_status:"sold" },
     {name:"Papi", medium:"Charcoal drawing", url:"Pap2.jpg", exhibited_at: "", price: "" , availability_status:"sold" },
+    {name:"Nino" , medium:"Charcoal drawing", url:"NinoWall.jpg", exhibited_at: "Royal Portrait Society Annual Exhibition 2014", price: "" , availability_status: "sold" },
     # {name:"Tito", medium:"Charcoal drawing", url:"Tito1.jpg", exhibited_at: "", price: "" , availability_status:"sold" },
+    {name:"Nino" , medium:"Oil Painting", url:"Nino.jpg", exhibited_at: "Royal Portrait Society Annual Exhibition 2017", price: "" , availability_status: "sold", award: "Highly Commended, The de Lazlo Foundation Award" },
     {name:"Glen", medium:"Oil Painting", url:"Glen.jpg", exhibited_at: "", price: "" , availability_status:"available" },
     {name:"Marina", medium:"Oil Painting", url:"Marina.jpg", exhibited_at: "", price: "" , availability_status:"available" },
     {name:"Russian", medium:"Oil Painting", url:"Russian.jpg", exhibited_at: "", price: "" , availability_status:"available" },
-    {name:"Woman", medium:"Oil Painting", url:"Woman.jpg", exhibited_at: "", price: "" , availability_status:"available" },
     {name:"Silvia", medium:"Oil Painting", url:"Silvia.jpg", exhibited_at: "", price: "" , availability_status:"available" },
     {name:"Stefan", medium:"Oil Painting", url:"Stefan.jpg", exhibited_at: "", price: "" , availability_status:"sold" },
     {name:"Boy1", medium:"Oil Painting", url:"Boy1.jpg", exhibited_at: "", price: "" , availability_status:"sold" },
     {name:"Boy2", medium:"Oil Painting", url:"Boy2.jpg", exhibited_at: "", price: "" , availability_status:"sold" },
-    {name:"Nino" , medium:"Oil Painting", url:"Nino.jpg", exhibited_at: "Royal Portrait Society Annual Exhibition 2017", price: "" , availability_status: "sold", award: "Highly Commended, The de Lazlo Foundation Award" }
+    {name:"Woman", medium:"Oil Painting", url:"Woman.jpg", exhibited_at: "", price: "" , availability_status:"available" }
 ]
 
 Painting.create(paintings)

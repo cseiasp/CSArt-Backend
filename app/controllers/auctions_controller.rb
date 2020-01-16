@@ -6,7 +6,9 @@ class AuctionsController < ApplicationController
     end
 
     def create
-        auction = Auction.create(auction_params)
+        auction = Auction.new()
+        auction.painting = Painting.find(params[:painting_id])
+        auction.update(auction_params)
         if auction.valid?
           render json: auction
         else
