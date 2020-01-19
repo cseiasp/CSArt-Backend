@@ -9,7 +9,7 @@ class Sale < ApplicationRecord
     end
 
     def saleInfo
-        return {display_text: "£" + self.bid_price.to_s + ", " + self.created_at.strftime("%B %e %Y at %I:%M %p"), sale: SalesSerializer.new(self)}
+        return {display_text: "£" + self.bid_price.to_s + ", " + self.created_at.strftime("%B %e %Y at %I:%M %p"), sale: self}
     end
 
 end

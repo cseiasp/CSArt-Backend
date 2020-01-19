@@ -9,6 +9,11 @@ class SalesController < ApplicationController
       render json: sales
     end
 
+    def show
+      sale = Sale.find(params[:id])
+      render json: {bid: sale.saleInfo, painting: sale.painting}
+    end
+
 
     def create
         new_sale = Sale.create(sale_params)
@@ -23,7 +28,7 @@ class SalesController < ApplicationController
       Sale.all.each{|sale| sale.update(status: "unsuccessful")}
       sale = Sale.find(params[:id])
       sale.update(status: sale_params[:status])
-      render json: {win: sale.saleInfo}
+      render json: {win: sale.saleInfo, painting: sale.paintings}
     end
 
     def winnings
